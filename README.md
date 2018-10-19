@@ -6,6 +6,8 @@ It is the code of our project. You can also see how we made it.
 #include <18f4550.h>
 #fuses nomclr,nowdt,intrc_io
 
+#use delay(clock=8000000)
+#device adc=10 
 
 #
 
