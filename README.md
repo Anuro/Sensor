@@ -1,4 +1,4 @@
-# Sensor
+  # Sensor
 It is the code of our project. You can also see how we made it.
 
 //Here start the code
@@ -10,9 +10,3 @@ It is the code of our project. You can also see how we made it.
 #define LCD_RS_PIN PIN_D1
 #define LCD_RW_PIN PIN_D2
 #define LCD_DATA4 PIN_D4
-
-#
-
-#
-
-#
