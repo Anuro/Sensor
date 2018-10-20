@@ -13,7 +13,10 @@ It is the code of our project. You can also see how we made it.
 #define LCD_RS_PIN PIN_D1
 #define LCD_RW_PIN PIN_D2
 #define LCD_DATA4 PIN_D4
->>>>>>> 2b13dd123dc69f394568ef09647a937f778d09b0
+#define LCD_DATA5 PIN_D5
+#define LCD_DATA6 PIN_D6
+#define LCD_DATA7 PIN_D7 
+#include <lcd.c> 
 
 void main()
 {
