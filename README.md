@@ -18,6 +18,14 @@ It is the code of our project. You can also see how we made it.
 #define LCD_DATA7 PIN_D7 
 #include <lcd.c> 
 
+#define buzzer pin_a1
+
+
+
+float temp;
+
+int lm35v = 0;
+
 void main()
 {
    setup_adc(ADC_CLOCK_INTERNAL);
