@@ -31,4 +31,7 @@ void main()
    setup_adc(ADC_CLOCK_INTERNAL);
    setup_adc_ports(AN0);
    set_adc_channel(0);
+   lcd_init();
+   while(TRUE)
 
+   {
