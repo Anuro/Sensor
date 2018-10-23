@@ -20,7 +20,5 @@ if(temp>40)
   
   
   
-  set_timer3(15535);                        // The timer3 is set to work wit 25ms
-   clear_interrupt(int_timer3);              // The timer3 is clean
-}
+  
   
