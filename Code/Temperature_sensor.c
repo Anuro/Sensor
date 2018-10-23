@@ -35,9 +35,15 @@ void read_temperature()  // This is a function inside the timer3 interrupt which
    			while(temp>40)                      //The thing that happen when the temperature is major 40°C.
 			{
 
-
-  
-  set_timer3(15535);                        // The timer3 is set to work wit 25ms
-   clear_interrupt(int_timer3);              // The timer3 is clean
+				output_toggle(buzzer);
+				delay_ms(100);                 //With this the buzzer will stop every second.
+				lm35v = read_adc();            //Read the adc again.
+				temp = lm35v*0.4882;          //It give the temperature.
+			}
+    	}
+   		cont=0;                              // The accountant is set to zero
+  	}
+	set_timer3(15535);                        // The timer3 is set to work wit 25ms
+   	clear_interrupt(int_timer3);              // The timer3 is clean
 }
   
