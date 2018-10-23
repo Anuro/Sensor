@@ -47,3 +47,9 @@ void read_temperature()  // This is a function inside the timer3 interrupt which
    	clear_interrupt(int_timer3);              // The timer3 is clean
 }
   
+void main()                   // Here, we set all the features that are needed
+{
+   setup_timer_3(T3_INTERNAL|T3_DIV_BY_1);      // The timer3 is set to work with the internal clock
+   set_timer3(15535);                           // The timer3 is set to overflow in 25ms 
+   enable_interrupts(int_timer3);               // Enable an interrupt by timer3
+   enable_interrupts(global);                   // Enable the global interrupts
