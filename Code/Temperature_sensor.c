@@ -4,7 +4,15 @@
 #use delay(clock=8000000)     // we indicate the crystal we are using, the internal crystal of this pic is 8MHz
 
 
-
+//Here, we set the LCD pins and include a library in order to be able to use LCD
+#define LCD_ENABLE_PIN PIN_D0
+#define LCD_RS_PIN PIN_D1
+#define LCD_RW_PIN PIN_D2
+#define LCD_DATA4 PIN_D4
+#define LCD_DATA5 PIN_D5
+#define LCD_DATA6 PIN_D6
+#define LCD_DATA7 PIN_D7
+#include <lcd.c>
 
 lm35v = read_adc();                    // Here, the sensor reads the current temperature
 temp = lm35v*0.488;                    // We multiplicate what the sensor read with the number of mV that are in each bit (0.488)
