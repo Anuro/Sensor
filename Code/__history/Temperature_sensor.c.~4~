@@ -25,26 +25,26 @@ void read_temperature()  // This is a function inside the timer3 interrupt which
    if(cont==40)                              // 40*(25ms) = 1 second
    {
 
-       lm35v = read_adc();                    // Here, the sensor reads the current temperature
-      temp = lm35v*0.488;                    // We multiplicate what the sensor read with the number of mV that are in each bit (0.488)
-      lcd_gotoxy(1,1);                       // We indicate where the cursor of the LCD will be
-      printf(lcd_putc,"\f T = %f",temp);      // The pic shows us what is the current temperature via LCD
-      if(temp>40)                                
-      {
-            printf(lcd_putc,"WARNING!!!");      //We print  WARNING!!! when the temperature is major that 40°C.
-            while(temp>40)                      //The thing that happen when the temperature is major 40°C.
-         {
+    	lm35v = read_adc();                    // Here, the sensor reads the current temperature
+		temp = lm35v*0.488;                    // We multiplicate what the sensor read with the number of mV that are in each bit (0.488)
+		lcd_gotoxy(1,1);                       // We indicate where the cursor of the LCD will be
+		printf(lcd_putc,"\f T = %f",temp);      // The pic shows us what is the current temperature via LCD
+		if(temp>40)                                
+		{
+   			printf(lcd_putc,"WARNING!!!");      //We print  WARNING!!! when the temperature is major that 40°C.
+   			while(temp>40)                      //The thing that happen when the temperature is major 40°C.
+			{
 
-            output_toggle(buzzer);
-            delay_ms(100);                 //With this the buzzer will stop every second.
-            lm35v = read_adc();            //Read the adc again.
-            temp = lm35v*0.4882;          //It give the temperature.
-         }
-       }
-         cont=0;                              // The accountant is set to zero
-     }
-   set_timer3(15535);                        // The timer3 is set to work wit 25ms
-      clear_interrupt(int_timer3);              // The timer3 is clean
+				output_toggle(buzzer);
+				delay_ms(100);                 //With this the buzzer will stop every second.
+				lm35v = read_adc();            //Read the adc again.
+				temp = lm35v*0.4882;          //It give the temperature.
+			}
+    	}
+   		cont=0;                              // The accountant is set to zero
+  	}
+	set_timer3(15535);                        // The timer3 is set to work wit 25ms
+   	clear_interrupt(int_timer3);              // The timer3 is clean
 }
   
 void main()                   // Here, we set all the features that are needed
@@ -56,10 +56,3 @@ void main()                   // Here, we set all the features that are needed
    clear_interrupt(int_timer3);                 // The timer3 is clean
    setup_adc(ADC_CLOCK_INTERNAL);               // The ADC is set to work with the internal clock
    setup_adc_ports(AN0);                        // The ADC is set to use one port (First port), this is more useful when you need to measure many areas
-   set_adc_channel(0);                          // Here, we indicate which of the ports we need to use as we said the last feature and this are more useful when you measure many areas
-   lcd_init();                                  // The LCD is initialized
-   while(true)
-   {
-
-   }
-}
