@@ -53,3 +53,6 @@ void main()                   // Here, we set all the features that are needed
    set_timer3(15535);                           // The timer3 is set to overflow in 25ms 
    enable_interrupts(int_timer3);               // Enable an interrupt by timer3
    enable_interrupts(global);                   // Enable the global interrupts
+   clear_interrupt(int_timer3);                 // The timer3 is clean
+   setup_adc(ADC_CLOCK_INTERNAL);               // The ADC is set to work with the internal clock
+   setup_adc_ports(AN0);                        // The ADC is set to use one port (First port), this is more useful when you need to measure many areas
